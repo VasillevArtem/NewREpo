@@ -5,14 +5,14 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #08101e;
-}
-
 header {
   background-color: #0a121f;
   height: 100px;
   margin-bottom: 160px;
+}
+
+body {
+  background-color: #08101e;
 }
 
 .container {
