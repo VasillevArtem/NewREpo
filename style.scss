@@ -5,9 +5,7 @@
     box-sizing: border-box;
 }
 
-$container-width: 1146;
-$body-backcolor: #08101e;
-$button-color:#3a6888;
+@import "vars"
 
 body{
     background-color:  $body-backcolor;
@@ -32,6 +30,10 @@ header{
     font-weight:  600;
     font-size: 16px;    
     padding: 40px 20px;
+}
+.menu-link:hover{
+    background-color: $button-color;
+    border-radius: 10px;
 }
 
 .title3{
