@@ -4,6 +4,15 @@
   outline: 0
   box-sizing: border-box
 
+
+@mixin txt($lh, $fs, $fw)
+    line-height: $lh
+    font-size: $fs
+    font-weight: $fw
+    color: $text-color
+    font-family: "Open Sans", sans-serif
+    opacity: 0.7
+
 @import "vars"
 @import "header"
 
@@ -60,14 +69,10 @@ body
 
 
 .main_dc 
-  font-family: "Open Sans", sans-serif
-  font-style: normal
-  font-weight: 600
-  font-size: 18px
-  line-height: 160%
-  color: #ffffff
-  opacity: 0.7
-
+  @include txt(160%, 18px, 600)
+  
+.content_dc
+  @include txt(60%, 20px, 700)
 
 .header_menu 
   display: flex

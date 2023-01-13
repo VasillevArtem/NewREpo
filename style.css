@@ -63,12 +63,20 @@ body {
 }
 
 .main_dc {
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
   line-height: 160%;
-  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3a6888;
+  font-family: "Open Sans", sans-serif;
+  opacity: 0.7;
+}
+
+.content_dc {
+  line-height: 60%;
+  font-size: 20px;
+  font-weight: 700;
+  color: #3a6888;
+  font-family: "Open Sans", sans-serif;
   opacity: 0.7;
 }
 
