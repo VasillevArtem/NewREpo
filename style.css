@@ -5,6 +5,23 @@
   box-sizing: border-box;
 }
 
+@-webkit-keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 header {
   background-color: #0a121f;
   height: 100px;
@@ -61,8 +78,8 @@ body {
   font-size: 20px;
   line-height: 27px;
   color: #ffffff;
-  transition: background-color 0, 3s;
-  transition: transform 3s;
+  -webkit-animation: scale-up-center 4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: scale-up-center 4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .main_dc {
@@ -182,5 +199,4 @@ button:hover {
   border: 3px dotted #3a7999;
   color: #3a7999;
   background: rgba(0, 0, 0, 0);
-  transform: scale(2);
 }/*# sourceMappingURL=style.css.map */

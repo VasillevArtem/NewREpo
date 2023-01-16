@@ -4,6 +4,16 @@
   outline: 0
   box-sizing: border-box
 
+@keyframes scale-up-center 
+  0% 
+    transform: scale(0.5)
+  
+  100% 
+    transform: scale(1)
+  
+
+    
+        
 
 @mixin txt($lh, $fs, $fw)
     line-height: $lh
@@ -37,6 +47,7 @@ body
   transition: background-color 3s
   
   
+  
 
 
 .title3 
@@ -68,9 +79,8 @@ body
   font-weight: 600
   font-size: 20px
   line-height: 27px
-  color: #ffffff
-  transition: background-color 0,3s
-  transition: transform 3s
+  color: #ffffff  
+  animation: scale-up-center 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
 
 .main_dc 
   @include txt(160%, 18px, 600)
@@ -87,9 +97,6 @@ body
     border-radius: 10px
     
     
-    
-
-
 
 .flex_box 
   display: flex
@@ -181,6 +188,6 @@ button:hover
   border: 3px dotted #3a7999
   color: #3a7999
   background: rgba(0, 0, 0, 0)
-  transform: scale(2)
+  
   
  
