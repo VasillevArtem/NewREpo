@@ -34,6 +34,9 @@ body
   font-weight: 600
   font-size: 16px
   padding: 40px 20px
+  transition: background-color 3s
+  
+  
 
 
 .title3 
@@ -66,7 +69,8 @@ body
   font-size: 20px
   line-height: 27px
   color: #ffffff
-
+  transition: background-color 0,3s
+  transition: transform 3s
 
 .main_dc 
   @include txt(160%, 18px, 600)
@@ -77,9 +81,13 @@ body
 .header_menu 
   display: flex
   justify-content: center
+  
   &__menu_link:hover
     background-color: $button-color
     border-radius: 10px
+    
+    
+    
 
 
 
@@ -173,4 +181,6 @@ button:hover
   border: 3px dotted #3a7999
   color: #3a7999
   background: rgba(0, 0, 0, 0)
+  transform: scale(2)
+  
  
