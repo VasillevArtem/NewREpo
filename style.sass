@@ -1,193 +1,570 @@
+$button-color-bg: #3a68b8
+$txt-clr: #ffffff
+
 * 
   margin: 0
   padding: 0
-  outline: 0
+  outline: none
   box-sizing: border-box
+  text-decoration: none !important
 
-@keyframes scale-up-center 
-  0% 
-    transform: scale(0.5)
-  
-  100% 
-    transform: scale(1)
-  
 
-    
-        
 
-@mixin txt($lh, $fs, $fw)
-    line-height: $lh
-    font-size: $fs
-    font-weight: $fw
-    color: $text-color
-    font-family: "Open Sans", sans-serif
-    opacity: 0.7
-
-@import "vars"
-@import "header"
 
 body 
-  background-color: #08101e
+  background-color: #020a18
+  padding: 1% 2% 0
 
+
+.header 
+  background-color: #0a121f
+  min-height: 100px
+  margin-bottom: 20px
+
+
+.header-menu 
+  display: flex
+  justify-content: center
+
+
+.bg-light 
+  --bs-bg-opacity: 1
+  background-color: #020a18 !important
+  margin-bottom: 100px
 
 
 .container 
-  width: 1146
   margin: 0 auto
+  max-width: 1146px
+  padding: 0
+
+
+@mixin txt-open-sans($fw, $fs, $lh, $fc) 
+  font-family: "Open Sans"
+  font-style: normal
+  font-weight: $fw
+  font-size: $fs
+  line-height: $lh
+  color: $fc
 
 
 .menu_link 
-  text-decoration: none
-  color: #ffffff
-  font-family: "Open Sans"
-  font-style: normal
-  font-weight: 600
-  font-size: 16px
+  @include txt-open-sans(600, 16px, 100%, $txt-clr)
   padding: 40px 20px
-  transition: background-color 3s
-  
-  
-  
+  border-radius: 10px
+  transition: background-color 0.5s
 
 
-.title3 
-  font-family: "Open Sans", sans-serif
-  font-style: normal
-  font-weight: 600
-  font-size: 18px
-  line-height: 160%
-  text-transform: uppercase
-  color: #3a6888
+.menu_link:hover 
+  background-color: $button-color-bg !important
+  border-radius: 10px
 
 
-.main_heading 
-  font-family: "Open Sans", sans-serif
-  font-style: normal
-  font-weight: 800
-  font-size: 55px
-  line-height: 130%
-  color: #ffffff
-
-
-.index_button 
-  background: #3a6888
-  border-radius: 5px
+.button 
   padding: 15px 30px
-  gap: 10px
-  font-family: "Open Sans", sans-serif
-  font-style: normal
-  font-weight: 600
-  font-size: 20px
-  line-height: 27px
-  color: #ffffff  
-  animation: scale-up-center 4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
+  margin-right: 20px
+  background: $button-color-bg
+  border-radius: 5px
+  @include txt-open-sans(600, 20px, 27px, $txt-clr)
+  transition: color, background-color 0.5s
+  border: 1px solid transparent
 
-.main_dc 
-  @include txt(160%, 18px, 600)
+  &_hover:hover 
+    color: #3a68b8
+    background-color: #fff
   
-.content_dc
-  @include txt(60%, 20px, 700)
 
-.header_menu 
+
+.icon 
+  transition: all 0.3s
+  width: 23%
+
+  &_hover:hover 
+    transform: scale(1.1)
+  
+
+
+.bar 
   display: flex
-  justify-content: center
-  
-  &__menu_link:hover
-    background-color: $button-color
-    border-radius: 10px
-    
-    
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  gap: 22px
+  padding-top: 200px
+  padding-bottom: 100px
+
 
 .flex_box 
   display: flex
   justify-content: space-between
 
 
-.box 
-  display: flex
-  justify-content: center
-
-
-.content_left 
-  width: 604px
-
-
-.button_box 
-  margin-bottom: 50px
-
-
-.content_information 
-  margin-top: 150px
-
-
-.right_content 
-  padding: 30px
-
-
-.flex_content 
-  display: flex
-  flex-wrap: wrap
-  align-content: stretch
+.content 
   align-items: center
 
 
-.item 
-  width: 362px
-  background: #132035
-  border-radius: 10px
-  text-align: center
+.content_left   
+  width: 52%
 
 
-.title4 
-  font-family: "Open Sans", sans-serif
-  font-style: normal
-  font-weight: 700
-  font-size: 25px
-  line-height: 125%
-  text-align: center
-  color: #ffffff
+.mini-header_cont 
+  @include txt-open-sans(600, 16px, 160%, #3a68b8)
+  text-transform: uppercase
+  margin-bottom: 10px
+
+
+.header-cont 
+  @include txt-open-sans(800, 55px, 130%, $txt-clr)
+  margin-bottom: 40px
+  width: 100%
+
+
+.par-cont   
+  width: 92.2%
+  @include txt-open-sans(600, 18px, 160%, $txt-clr)
   opacity: 0.7
+  margin-bottom: 50px
 
 
-.content_blocks 
-  font-family: "Open Sans", sans-serif
-  font-style: normal
-  font-weight: 600
-  font-size: 16px
-  line-height: 160%
-  text-align: center
-  color: #ffffff
-  opacity: 0.7
-  padding: 30px
+@-webkit-keyframes rotate-in-2-cw 
+  0% 
+    -webkit-transform: rotate(-45deg)
+    transform: rotate(-45deg)
+    opacity: 0
+  
+  100% 
+    -webkit-transform: rotate(0)
+    transform: rotate(0)
+    opacity: 1
+  
+
+@keyframes rotate-in-2-cw 
+  0% 
+    -webkit-transform: rotate(-45deg)
+    transform: rotate(-45deg)
+    opacity: 0
+  
+  100% 
+    -webkit-transform: rotate(0)
+    transform: rotate(0)
+    opacity: 1
+  
 
 
-.left_content_image 
-  width: 754px
-  background: #132035
-  border-radius: 10px
-  padding: 30px
-  text-align: center
-  margin-top: 30px
+.content_right 
+  max-width: 45%
 
 
-.flex_content_block 
-  display: flex
-  justify-content: space-between
-  align-items: stretch
+.main-video 
+  width: 100%
+  -webkit-animation: rotate-in-2-cw 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+  animation: rotate-in-2-cw 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
 
 
-.right_content_image 
-  margin-top: 30px
+.first_middle 
+  margin-top: 157px
+  margin-bottom: 264px
 
 
-.margin_bott 
+.first_middle_left 
+  width: 52%
+
+
+.first_middle_right 
+    width: 42.2%
+
+
+.mid-img 
+  width: 100%
+
+
+.first_middle_header 
+  margin-top: 117px
   margin-bottom: 30px
+  @include txt-open-sans(700, 40px, 130%, $txt-clr)
 
 
-button:hover 
-  border: 3px dotted #3a7999
-  color: #3a7999
-  background: rgba(0, 0, 0, 0)
+.first_middle_cont   
+  width: 95%
+  margin-bottom: 50px
+  @include txt-open-sans(600, 16px, 160%, $txt-clr)
+  opacity: 0.7
+
+
+.middle_button 
+  font-size: 16px
+  line-height: 22px
+
+
+.txt-cntr-opc 
+  text-align: center
+  opacity: 0.7
+
+
+.item_head 
+  margin: 30px
+  @include txt-open-sans(700, 25px, 125%, $txt-clr)
+  @extend .txt-cntr-opc
+
+
+.item_cont 
+  margin: 0 30px 30px 30px
+  @include txt-open-sans(600, 16px, 160%, $txt-clr)
+  @extend .txt-cntr-opc
+
+
+.item_icon 
+  display: block
+  margin: 30px auto 0px
+
+
+.color-rad 
+  border-radius: 10px
+  background-color: #132035
+
+
+.grid-box 
+  display: grid
+  grid-template-rows: repeat(3, 3fr)
+  grid-template-columns: repeat(3, 31.5%)
+  gap: 30px
+
+.item 
+  @extend .color-rad
+  min-height: 390px
+
+
+.item4 
+  grid-row: 2/4
+  grid-column: 1/3
+
+
+.big_icon 
+  width: 306px
+  height: 322px
+  display: block
+  margin: 30px auto 0px
+
+
+.item_head_big 
+  margin: 60px 30px
+  @include txt-open-sans(700, 25px, 125%, $txt-clr)
+  @extend .txt-cntr-opc
+
+
+.item_cont_big 
+  margin: 0px 30px 144px
+  @include txt-open-sans(600, 16px, 160%, $txt-clr)
+  @extend .txt-cntr-opc
+
+
+.second_middle 
+  margin-top: 243px
+  margin-bottom: 235px
+
+
+.second_middle_left 
+    width: 52%
+
+
+.second_middle_right 
+  width: 47%
+
+
+.middle-img 
+  width: 100%
+
+
+.second_middle_header 
+  margin-top: 14px
+  margin-bottom: 40px
+  @include txt-open-sans(700, 40px, 130%, $txt-clr)
+
+
+.second_middle_cont 
+  margin-bottom: 20px
+  width: 84%
+  @include txt-open-sans(600, 16px, 160%, $txt-clr)
+  opacity: 0.7
+
+
+.par_bottom 
+  margin-bottom: 14px
+
+
+footer 
+  background-color: #060e1c
+
+
+.foot_item 
+    width: 32%
+
+
+@mixin txt-roboto($fw, $fs, $lh, $fc) 
+  font-family: "Roboto"
+  font-style: normal
+  font-weight: $fw
+  font-size: $fs
+  line-height: $lh
+  color: $fc
+
+
+.foot_head 
+  margin-top: 48px
+  margin-bottom: 33px
+  @include txt-roboto(500, 16px, 19px, $txt-clr)
+
+
+.first_foot_iten,
+.foot_item_right_up 
+  margin-bottom: 25px
+  @include txt-roboto(500, 14px, 16px, $txt-clr)
+
+
+.foot_item_middle 
+  width: 28%
+  margin-right: 130px
+  margin-left: 108px
+
+
+.foot_item_middle_p
+  width: 95%
+  @include txt-roboto(100, 14px, 16px, $txt-clr)
+  font-style: italic
+  opacity: 0.6
+
+
+.foot_bottom 
+  margin-bottom: 51px
+
+
+.fa,
+.fas 
+  margin-right: 10px
+  @include txt-roboto(500, 14px, 16px, $txt-clr)
+
+
+@media (min-width: 376px) and (max-width: 768px) 
+  .container 
+    flex-wrap: wrap
   
+
+  .content 
+    justify-content: center
   
- 
+
+  .icon 
+    width: 40%
+  
+
+  .bar 
+    justify-content: center
+  
+
+  .content_right 
+    margin-top: 128px
+    max-width: 95%
+  
+
+  .content_left,
+  .content_right,
+  .first_middle_left,
+  .first_middle_right,
+  .second_middle_left,
+  .second_middle_right 
+    width: 98%
+    justify-content: center
+  
+
+  .second_middle_right 
+    margin-top: 65px
+  
+
+  .first_middle_right 
+    max-width: 485px
+  
+
+  .flex_box 
+    justify-content: center
+  
+
+  .grid-box 
+    grid-template-rows: repeat(3, 1fr)
+    grid-template-columns: 362px
+    justify-content: center
+  
+
+  .footer 
+    justify-content: flex-start
+    padding-bottom: 50px
+  
+
+  .foot_item_middle 
+    margin: 0 0 0 130px
+  
+
+  .foot_bottom 
+    margin-bottom: 0
+  
+
+  .item4,
+  .item5,
+  .item6 
+    display: none
+  
+
+  .foot_item 
+    width: 35%
+  
+
+
+@media (max-width: 1024px)
+  .icon 
+    width: 48%
+  
+
+
+@media (max-width: 768px) 
+  .menu_link 
+    font-size: 14px
+    padding: 22px 8px
+  
+
+  .header 
+    min-height: 65px
+  
+
+  .button 
+    margin: 0 10px 20px
+  
+
+
+@media (max-width: 375px) 
+  .container 
+    flex-wrap: wrap
+  
+
+  .content 
+    justify-content: center
+  
+
+  .mini-header_cont 
+    font-size: 14px
+    align-items: center
+  
+
+  .header-cont 
+    font-size: 28px
+    align-items: center
+  
+
+  .icon 
+    width: 80%
+  
+
+  .bar 
+    justify-content: center
+    padding-top: 128px
+  
+
+  .content_right 
+    margin-top: 108px
+    max-width: 95%
+  
+
+  .par-cont 
+    width: 100%
+  
+
+  .content_left,
+  .content_right,
+  .first_middle_left,
+  .first_middle_right,
+  .second_middle_left,
+  .second_middle_right 
+    width: 100%    
+    text-align: center
+  
+
+  .first_middle 
+    margin: 96px auto
+  
+
+  .first_middle_header 
+    margin-top: 68px
+    margin-bottom: 16px
+    font-size: 24px
+  
+
+  .first_middle_cont 
+    margin-bottom: 16px
+  
+
+  .second_middle 
+    margin: 96px auto
+  
+  .second_middle_right 
+    margin-top: 32px
+  
+
+  .first_middle_right 
+    max-width: 485px
+  
+
+  .second_middle_header 
+    margin-bottom: 16px
+    font-size: 24px
+  
+
+  .second_middle_cont 
+    margin-bottom: 16px
+    width: 100%
+  
+
+  .flex_box 
+    justify-content: center
+  
+
+  .grid-box 
+    grid-template-rows: repeat(3, 425px)
+    grid-template-columns: 310px
+    justify-items: center
+    justify-content: center
+  
+  .item1,
+  .item2,
+  .item3 
+    width: 97%
+  
+
+  .item4,
+  .item5,
+  .item6 
+    display: none
+  
+
+  .footer 
+    justify-content: flex-start
+    padding-bottom: 50px
+  
+
+  .foot_item_middle 
+    order: -1
+    margin: 0
+  
+
+  .foot_bottom 
+    margin-bottom: 0
+  
+
+  .foot_item 
+    width: 99%
+  
+
+  .foot_head,
+  .foot_item_right_up,
+  .foot_item_right_down 
+    text-align: center
+  
+
